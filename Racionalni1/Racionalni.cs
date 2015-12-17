@@ -27,8 +27,13 @@
             return string.Format("{0} / {1}", Brojnik, Nazivnik);
         }
 
-        // TODO: dodati konstruktor pretvorbe (konverzije) koji stvara racionalni broj iz tipa double i u njemu treba samo pozvati metodu Raščlani
 
+        // dodati konstruktor pretvorbe (konverzije) koji stvara racionalni broj iz tipa double i u njemu treba samo pozvati metodu Raščlani
+        public Racionalni(double broj) : this()
+        {
+            Raščlani(broj);
+        }
+        
 
 
 
