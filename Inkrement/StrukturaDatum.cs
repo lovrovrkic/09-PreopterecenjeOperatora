@@ -46,8 +46,17 @@ namespace Vsite.CSharp
         public static StrukturaDatum operator ++(StrukturaDatum datum)
         {
             datum.Dan++;
-            // TODO: dodati korekcije ako je prekoračen zadnji dan u mjesecu i godini
-
+            // dodati korekcije ako je prekoračen zadnji dan u mjesecu i godini
+            if(datum.Dan > Datum.BrojDanaUMjesecu(datum.Mjesec, datum.Godina))
+            {
+                datum.Mjesec++;
+                datum.Dan = 1;
+                if(datum.Mjesec > 12)
+                {
+                    datum.Godina++;
+                    datum.Mjesec = 1;
+                }
+            }
             return datum;
         }
     }
